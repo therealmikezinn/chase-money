@@ -15,7 +15,10 @@ const formatCents = (cents) => {
         copy = copy.slice(0, 2);
     }
 
-    if(copy.length === 2 && copy.charAt(0) === '0' && copy.charAt(1) !== '0'){
+    if(copy.length === 2
+        && copy.charAt(0) === '0'
+        && copy.charAt(1) !== '0'
+    ){
         copy = copy.charAt(1);
     }
 
