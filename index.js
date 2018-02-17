@@ -22,7 +22,6 @@ const formatCents = (cents) => {
     return parseInt(copy, 10);
 };
 
-
 export const toCents = (amount) => {
     if(!typeChecker.isString(amount) && !typeChecker.isNumber(amount)){
         return 0;
@@ -38,11 +37,19 @@ export const toCents = (amount) => {
 };
 
 export const toDollar = (cents) => {
-    if(!typeChecker.isString(cents) && !typeChecker.isNumber(cents) || cents === 0 || cents.toString().length < 3){
+    if(!typeChecker.isString(cents)
+        && !typeChecker.isNumber(cents)
+        || cents === 0
+        || cents.toString().length < 3
+    ){
         return 0;
     }
 
     const amount = cents.toString();
 
-    return parseFloat(`${amount.slice(0, amount.length - 2)}.${amount.slice(amount.length - 2)}`)
+    const sign = (amount.charAt(0) === '-') ? -1 : 1;
+
+    amount.replace('-', '');
+
+    return sign * parseFloat(`${amount.slice(0, amount.length - 2)}.${amount.slice(amount.length - 2)}`)
 };
