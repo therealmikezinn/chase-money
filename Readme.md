@@ -19,7 +19,7 @@ const dollars = toDollars(cents);
 
 ### `toCents(amount)`
 
-Converts a dollar ammount to cents
+Converts dollars to cents
 
 -  `amount` - The dollar amount to be converted to cents,
 can be either a string or numeric type. When amount is not valid
@@ -28,7 +28,7 @@ toCents will return 0.
 
 ### `toDollars(cents)`
 
-Converts a dollar ammount to cents
+Converts cents to dollars
 
 -  `cents` - The number of cents to be converted to dollars,
 can be either a string or numeric type.  When amount is not valid
